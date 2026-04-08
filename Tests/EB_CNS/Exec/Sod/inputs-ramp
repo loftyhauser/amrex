@@ -1,6 +1,6 @@
 amrex.fpe_trap_invalid=1
 
-max_step  = 1000
+max_step  = 2000
 stop_time = 5.0
 
 geometry.is_periodic = 0 0 0
@@ -27,7 +27,7 @@ amr.loadbalance_with_workestimates = 1
 amr.loadbalance_level0_int = 1000
 
 # REFINEMENT / REGRIDDING 
-amr.max_level       = 1       # maximum level number allowed
+amr.max_level       = 3       # maximum level number allowed
 
 amr.ref_ratio       = 2 2 2 2 # refinement ratio
 amr.regrid_int      = 2 2 2 2 # how often to regrid
@@ -59,9 +59,9 @@ eb2.plane_point = 0.5 0.0 0.0
 eb2.plane_normal = 0.2588 -0.9659 0.0 # Corresponds to a 15-degree ramp
 #eb2.geom_type = all_regular
 
-cns.refine_cutcells = 0
+cns.refine_cutcells = 1
 
-cns.do_visc = true
+cns.do_visc = false
 #cns.use_const_visc = false
 #cns.const_visc_mu  = 0.001
 #cns.const_visc_ki  = 0.0
@@ -117,3 +117,5 @@ prob.rho_r = 1.0
 prob.u_l   = 2.0
 prob.u_r   = 2.0
 
+cns.refine_max_dengrad_lev = 3
+cns.refine_dengrad = 0.01
